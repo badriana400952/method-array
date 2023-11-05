@@ -76,16 +76,19 @@ bahasa dan angka desimal lokal).
 ## Metode: concat()
 const semuaItem = namaBuah.concat(namaminuman);
 console.log(semuaItem);
+
 // Output: [ { id: 1, name: 'mangga', price: 20000 }, { id: 1, name: 'teh', price: 40000 } ]
 
 ## Metode: entries()
 const buahEntries = Object.entries(namaBuah[0]);
 console.log(buahEntries);
+
 // Output: [ [ 'id', 1 ], [ 'name', 'mangga' ], [ 'price', 20000 ] ]
 
 ## Metode: every()
 const semuaHargaDiBawah50000 = semuaItem.every(item => item.price < 50000);
 console.log(semuaHargaDiBawah50000);
+
 // Output: true (karena semua item memiliki harga di bawah 50000)
 
 ## Metode: fill()
@@ -97,23 +100,27 @@ console.log(arrayKosong);
 ## Metode: filter()
 const itemDenganHargaDiatas30000 = semuaItem.filter(item => item.price > 30000);
 console.log(itemDenganHargaDiatas30000);
+
 // Output: [ { id: 1, name: 'teh', price: 40000 } ]
 
 ## Metode: find()
 const buahDitemukan = semuaItem.find(item => item.name === 'mangga');
 console.log(buahDitemukan);
+
 // Output: { id: 1, name: 'mangga', price: 20000 }
 
 ## Metode: flat()
 const arrayNested = [1, [2, 3], [4, [5]]];
 const arrayFlat = arrayNested.flat(2);
 console.log(arrayFlat);
+
 // Output: [ 1, 2, 3, 4, 5 ]
 
 ## Metode: forEach()
 semuaItem.forEach(item => {
   console.log(`Nama: ${item.name}, Harga: ${item.price}`);
 });
+
 // Output: Nama: mangga, Harga: 20000
 //         Nama: teh, Harga: 40000
 
@@ -125,25 +132,30 @@ console.log(arrayDariNama);
 ## Metode: includes()
 const apakahTehAda = semuaItem.some(item => item.name === 'teh');
 console.log(apakahTehAda);
+
 // Output: true (karena 'teh' ada dalam array)
 
 ## Metode: indexOf()
 const indexMangga = semuaItem.findIndex(item => item.name === 'mangga');
 console.log(indexMangga);
+
 // Output: 0 (karena 'mangga' ada di indeks 0 dalam array)
 
 ## Metode: isArray()
 console.log(Array.isArray(semuaItem));
+
 // Output: true (karena semuaItem adalah array)
 
 ## Metode: join()
 const namaBuahString = namaBuah.map(item => item.name).join(', ');
 console.log(namaBuahString);
+
 // Output: 'mangga' (menggabungkan nama buah menjadi string terpisah oleh koma)
 
 ## Metode: keys()
 const keysBuah = Object.keys(namaBuah[0]);
 console.log(keysBuah);
+
 // Output: [ 'id', 'name', 'price' ] (mengambil kunci-kunci properti objek)
 
 ## Metode: map()
@@ -154,61 +166,73 @@ console.log(hargaDikaliDua);
 ## Metode: of()
 const arrayBaru = Array.of(1, 2, 3, 4, 5);
 console.log(arrayBaru);
+
 // Output: [ 1, 2, 3, 4, 5 ] (membuat array baru dengan elemen-elemen yang diberikan)
 
 ## Metode: pop()
 const buahTerakhir = semuaItem.pop();
 console.log(buahTerakhir);
+
 // Output: { id: 1, name: 'teh', price: 40000 } (elemen terakhir dihapus dari array)
 
 ## Metode: push()
 semuaItem.push({ id: 2, name: 'jeruk', price: 30000 });
 console.log(semuaItem);
+
 // Output: [ { id: 1, name: 'mangga', price: 20000 }, { id: 2, name: 'teh', price: 40000 }, { id: 2, name: 'jeruk', price: 30000 } ] (menambahkan elemen baru ke array)
 
 ## Metode: reduce()
 const totalHarga = semuaItem.reduce((acc, item) => acc + item.price, 0);
 console.log(totalHarga);
+
 // Output: 90000 (menghitung total harga dari semua item)
 
 ## Metode: reverse()
 const reversedItem = [...semuaItem].reverse();
 console.log(reversedItem);
+
 // Output: [ { id: 2, name: 'jeruk', price: 30000 }, { id: 2, name: 'teh', price
 
 ## shift();
 const itemPertama = semuaItem.shift();
 console.log(itemPertama);
+
 // Output: { id: 1, name: 'mangga', price: 20000 } (elemen pertama dihapus dari array)
 
 ## slice()
 const sliceItem = semuaItem.slice(1, 2);
 console.log(sliceItem);
+
 // Output: [ { id: 2, name: 'teh', price: 40000 } ] (membuat salinan elemen dari indeks 1 hingga 1, indeks 2 tidak termasuk)
 
 ## some()
 const adaItemDenganHargaDiatas25000 = semuaItem.some(item => item.price > 25000);
 console.log(adaItemDenganHargaDiatas25000);
+
 // Output: true (karena ada item dengan harga di atas 25000 dalam array)
 
 ## sort()
 const itemDenganUrutanAlfabet = [...semuaItem].sort((a, b) => a.name.localeCompare(b.name));
 console.log(itemDenganUrutanAlfabet);
+
 // Output: [ { id: 2, name: 'jeruk', price: 30000 }, { id: 1, name: 'mangga', price: 20000 }, { id: 2, name: 'teh', price: 40000 } ] (mengurutkan item berdasarkan nama secara alfabetis)
 
 const indexItemTeh = semuaItem.findIndex(item => item.name === 'teh');
 semuaItem.splice(indexItemTeh, 1, { id: 2, name: 'susu', price: 35000 });
 console.log(semuaItem);
+
 // Output: [ { id: 1, name: 'mangga', price: 20000 }, { id: 2, name: 'susu', price: 35000 }, { id: 2, name: 'jeruk', price: 30000 } ] (mengganti item 'teh' dengan 'susu' dalam array)
 
 ## toString()
 const arrayToString = semuaItem.toString();
 console.log(arrayToString);
+
 // Output: " [object Object],[object Object],[object Object] " (mengubah array menjadi string)
 
 ## values()
 const nilaiItem = Object.values(semuaItem[0]);
 console.log(nilaiItem);
+
 // Output: [ 1, 'mangga', 20000 ] (mengambil nilai-nilai properti objek dalam array pertama)
 
 
